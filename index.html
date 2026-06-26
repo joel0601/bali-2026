@@ -45,7 +45,7 @@ body{
 
 
 /* Countdown */
-.countdown-strip{
+.countdown-strip{display:flex;align-items:center;gap:0;padding-top:28px;}
   display:flex;align-items:center;gap:0;padding:14px 6vw 0;
   max-width:1400px;margin:0 auto;
 }
@@ -76,7 +76,7 @@ body{
   font-size:13px;color:var(--text-soft);padding-bottom:22px;margin-left:6px;
 }
 @media(max-width:768px){
-  .countdown-strip{padding:14px 5vw 0;justify-content:center;flex-wrap:wrap}
+  .countdown-strip{justify-content:flex-start;flex-wrap:wrap}
   .countdown-flip{padding:10px 12px;min-width:58px;border-radius:10px}
   .countdown-num{font-size:26px}
   .countdown-sep{font-size:20px;margin:0 1px;padding-bottom:18px}
@@ -386,6 +386,14 @@ footer{border-top:1px solid var(--border);padding:40px 6vw;text-align:center;col
 
 <!-- ====== HERO ====== -->
 
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-label">6 人 · 3 对情侣 · 8 天 7 晚</div>
+    <h1>Bali <span>+</span><br>Komodo<br><span>2026</span></h1>
+    <p class="hero-subtitle">
+      金巴兰悬崖日落、乌布丛林飞驰、佩妮达精灵坠崖、科莫多寻龙探秘——一场有松有紧的赤道冒险。
+    </p>
 <div class="countdown-strip" id="countdown">
   <div class="countdown-block">
     <div class="countdown-flip"><div class="countdown-num" id="cd-days">--</div><div class="countdown-label">天</div></div>
@@ -399,14 +407,6 @@ footer{border-top:1px solid var(--border);padding:40px 6vw;text-align:center;col
   <div class="countdown-target">距离 2026.10.1 出发</div>
 </div>
 
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-label">6 人 · 3 对情侣 · 8 天 7 晚</div>
-    <h1>Bali <span>+</span><br>Komodo<br><span>2026</span></h1>
-    <p class="hero-subtitle">
-      金巴兰悬崖日落、乌布丛林飞驰、佩妮达精灵坠崖、科莫多寻龙探秘——一场有松有紧的赤道冒险。
-    </p>
     <div class="hero-meta">
       <div class="hero-meta-item"><div class="hero-meta-val">10.1 — 10.8</div><div class="hero-meta-label">出行日期</div></div>
       <div class="hero-meta-item"><div class="hero-meta-val">4</div><div class="hero-meta-label">海岛 / 地区</div></div>
