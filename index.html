@@ -150,9 +150,9 @@ nav.scrolled{
 .flight-arrow{color:var(--text-soft);font-size:18px;flex-shrink:0}
 .flight-info{font-size:13px;color:var(--text-soft);display:flex;gap:16px;flex-wrap:wrap;margin-top:2px}
 
-.hotel-grid{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:16px;grid-template-rows:auto auto}
+.hotel-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:16px}
 .hotel-main{
-  grid-row:1/3;background:var(--surface);border:1px solid var(--border);
+  grid-row:1/2;background:var(--surface);border:1px solid var(--border);
   border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-sm);
   transition:transform 0.4s var(--spring),box-shadow 0.4s var(--spring);
 }
@@ -316,6 +316,7 @@ footer{border-top:1px solid var(--border);padding:40px 6vw;text-align:center;col
   .hero-meta{flex-wrap:wrap;gap:20px}
   .hotel-grid{grid-template-columns:1fr}
   .hotel-main{grid-row:auto}
+  .hotel-main{grid-row:auto}
   .budget-grid{grid-template-columns:1fr}
   .timeline-day{padding-left:44px}
   .timeline-line{left:18px}
@@ -398,7 +399,8 @@ footer{border-top:1px solid var(--border);padding:40px 6vw;text-align:center;col
   <div class="section-header reveal"><div class="section-tag">Accommodation</div><div class="section-title">住宿安排</div></div>
   <div class="hotel-grid reveal">
     <div class="hotel-main"><div class="hotel-badge">主要住宿</div><div class="hotel-name">InterContinental Bali Resort</div><div class="hotel-location">金巴兰 · Jimbaran</div><div style="display:flex;align-items:flex-end;gap:12px;margin-top:20px"><div class="hotel-nights">2</div><div class="hotel-nights-sub">晚 · 10/1 — 10/3</div></div><div class="hotel-room">King Classic · 含早餐<br>Complimentary Singaraja Space Access<br>日落沙滩晚餐</div></div>
-    <div class="hotel-card"><div class="hotel-badge">中转住宿</div><div class="hotel-name">沙努尔码头附近</div><div class="hotel-location">Sanur · 沙努尔</div><div style="display:flex;align-items:flex-end;gap:12px;margin-top:20px"><div class="hotel-nights">2</div><div class="hotel-nights-sub">晚 · 10/3 — 10/5</div></div><div class="hotel-room">房型待定 · 近码头方便去佩妮达</div></div>
+    <div class="hotel-card"><div class="hotel-badge">丛林度假</div><div class="hotel-name">Alila Ubud</div><div class="hotel-location">Ubud · 乌布</div><div style="display:flex;align-items:flex-end;gap:12px;margin-top:20px"><div class="hotel-nights">1</div><div class="hotel-nights-sub">晚 · 10/3 — 10/4</div></div><div class="hotel-room">Classic Room · 含早餐<br>丛林度假体验</div></div>
+    <div class="hotel-card"><div class="hotel-badge">泳池别墅</div><div class="hotel-name">Taman Estate by Ekosistem</div><div class="hotel-location">Seminyak · 水明漾</div><div style="display:flex;align-items:flex-end;gap:12px;margin-top:20px"><div class="hotel-nights">1</div><div class="hotel-nights-sub">晚 · 10/4 — 10/5</div></div><div class="hotel-room">三卧室泳池别墅 · 含早餐</div></div>
     <div class="hotel-card"><div class="hotel-badge">海岛度假</div><div class="hotel-name">Ayana Komodo</div><div class="hotel-location">Labuan Bajo · 科莫多</div><div style="display:flex;align-items:flex-end;gap:12px;margin-top:20px"><div class="hotel-nights">2</div><div class="hotel-nights-sub">晚 · 10/5 — 10/7</div></div><div class="hotel-room">King Classic · 私人快艇出海</div></div>
   </div>
 </section>
@@ -455,45 +457,51 @@ window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.s
 
 // --- DAYS DATA ---
 const days=[
-  {num:'01',date:'10/1 Wed',title:'抵达·酒店休整',theme:'金巴兰悬崖日落',hotel:'InterContinental Bali Resort',items:[
-    {time:'12:55',name:'落地 DPS',desc:'过关约 1h。ATM 取现（银联单笔 1250K IDR）'},
+  {num:'01',date:'10/1 Thu',title:'抵达·酒店休整',theme:'金巴兰悬崖日落',hotel:'InterContinental Bali Resort',items:[
+    {time:'12:55',name:'落地 DPS',desc:'过关约半小时。ATM 取现（银联单笔 1250K IDR）'},
     {time:'15:00',name:'入住 InterContinental Bali Resort',desc:'金巴兰 · 后续 2 晚基地'},
     {time:'18:00',name:'日落沙滩晚餐',desc:'洲际酒店日落沙滩晚餐，绝美日落'},
-    {time:'21:00',name:'沙滩休整',desc:'提前定好第二天包车 + ATV + 按摩'}
+    {time:'21:00',name:'沙滩休整',desc:'明天佩妮达早起'}
   ]},
-  {num:'02',date:'10/2 Fri',title:'乌布亲近自然日',theme:'瀑布 · ATV · 花瓣浴 · 按摩',hotel:'InterContinental Bali Resort',items:[
-    {time:'08:30',name:'自然醒 + 早餐',desc:''},
-    {time:'10:00',name:'Gembleng Waterfall 瀑布',desc:'拍照打卡'},
-    {time:'13:00',name:'午餐',desc:'Delpi Cafe（悬崖沙滩）或其他'},
-    {time:'15:00',name:'ATV 丛林越野',desc:''},
-    {time:'16:30',name:'本地花瓣浴 + 按摩',desc:''},
-    {time:'19:30',name:'晚餐',desc:'可以去苍古'},
-    {time:'21:30',name:'夜生活',desc:'提前定好第二天包车 + 滑翔伞 + Beach Club'}
-  ]},
-  {num:'03',date:'10/3 Sat',title:'乌鲁瓦图悬崖日',theme:'悬崖公路 · 滑翔伞 · 火舞 · Beach Club',hotel:'沙努尔码头附近',items:[
-    {time:'08:30',name:'自然醒 + 早餐',desc:''},
-    {time:'10:00',name:'退房出发',desc:'带上行李，包车'},
-    {time:'11:30',name:'悬崖公路拍照',desc:'Blue Point · Bingin Beach'},
-    {time:'13:00',name:'滑翔伞',desc:'提前预约'},
-    {time:'15:00',name:'日落 Beach Club',desc:'White Rock 或 Palmilla'},
-    {time:'21:00',name:'返回酒店',desc:'提前定好佩妮达船票 + 包车'}
-  ]},
-  {num:'04',date:'10/4 Sun',title:'佩妮达西线一日游',theme:'精灵坠崖 · 破碎海滩 · 天神浴池',hotel:'沙努尔码头附近',items:[
-    {time:'07:00',name:'出发沙努尔码头',desc:'Grab 30-40min'},
-    {time:'08:00',name:'快艇出发',desc:'Klook 提前买票，航程 50min'},
+  {num:'02',date:'10/2 Fri',title:'佩妮达西线一日游',theme:'精灵坠崖 · 破碎海滩 · 天神浴池',hotel:'InterContinental Bali Resort',items:[
+    {time:'07:00',name:'出发沙努尔码头',desc:'打车 Grab，约 1 小时'},
+    {time:'08:00',name:'快艇出发',desc:'Klook 提前 2 周买票，航程 40min'},
     {time:'09:00',name:'抵达佩妮达',desc:'包车接（550-700K IDR/天）'},
     {time:'09:30',name:'破碎海滩',desc:'拍照 30min'},
     {time:'10:15',name:'天神浴池',desc:'潮位合适可下水'},
     {time:'12:00',name:'精灵坠崖 Kelingking',desc:'爬下悬崖 1-2h！穿运动鞋'},
     {time:'16:00',name:'快艇返回',desc:''},
-    {time:'19:00',name:'晚餐',desc:'苍古或水明漾逛街'}
+    {time:'17:00',name:'水明漾/苍古/库塔集合',desc:'附近有著名烤猪排 Naughty Nuri's'},
+    {time:'19:00',name:'回酒店',desc:'提前收拾行李，第二天带行李离店'}
+  ]},
+  {num:'03',date:'10/3 Sat',title:'乌布亲近自然日',theme:'瀑布 · ATV · 花瓣浴 · 按摩',hotel:'Alila Ubud',items:[
+    {time:'08:30',name:'自然醒 + 早餐',desc:''},
+    {time:'09:30',name:'退房出发',desc:'带上行李'},
+    {time:'10:00',name:'Gembleng Waterfall 瀑布',desc:'拍照打卡'},
+    {time:'13:00',name:'午餐',desc:''},
+    {time:'15:00',name:'ATV / 漂流',desc:'需提前预约'},
+    {time:'16:30',name:'本地花瓣浴 + 按摩',desc:'需提前半个月预约'},
+    {time:'18:00',name:'回酒店入住 Alila Ubud',desc:''},
+    {time:'19:30',name:'出发晚餐',desc:'可以去苍古逛逛小店'},
+    {time:'21:30',name:'夜生活',desc:'收拾好行李，第二天自然醒后出发'}
+  ]},
+  {num:'04',date:'10/4 Sun',title:'乌鲁瓦图悬崖日',theme:'悬崖公路 · 滑翔伞 · 火舞 · Beach Club',hotel:'Taman Estate',items:[
+    {time:'06:00',name:'早起苍古跑团（可选）',desc:''},
+    {time:'09:30',name:'自然醒 + 早餐',desc:''},
+    {time:'10:30',name:'退房出发',desc:'带上行李，包车'},
+    {time:'11:30',name:'悬崖公路拍照',desc:'Blue Point · Bingin Beach'},
+    {time:'13:00',name:'滑翔伞',desc:'提前预约'},
+    {time:'15:00',name:'日落 Beach Club',desc:'White Rock 或 Palmilla，晚餐一并解决'},
+    {time:'21:00',name:'返回水明漾，办理入住',desc:'Taman Estate by Ekosistem'}
   ]},
   {num:'05',date:'10/5 Mon',title:'泳池 → 飞科莫多',theme:'Ayana Komodo',hotel:'Ayana Komodo',items:[
     {time:'09:00',name:'自然醒 + 早餐',desc:''},
     {time:'10:00',name:'泳池 / 沙滩 + 退房',desc:''},
-    {time:'12:00',name:'出发去 DPS',desc:'车程 69min'},
+    {time:'11:00',name:'出发去 DPS',desc:'车程约 1 小时'},
     {time:'13:35',name:'DPS → LBJ',desc:'航程约 1h15min'},
-    {time:'18:15',name:'抵达拉布安巴焦',desc:'入住 Ayana Komodo'},
+    {time:'14:45',name:'抵达拉布安巴焦',desc:'入住 Ayana Komodo'},
+    {time:'15:30',name:'抵达酒店，办理入住',desc:''},
+    {time:'16:00',name:'市中心闲逛',desc:''},
     {time:'19:30',name:'晚餐',desc:'Ayana 海景餐厅或镇上'},
     {time:'20:30',name:'确认次日一日游',desc:'与礼宾确认路线'}
   ]},
@@ -518,6 +526,8 @@ const days=[
     {time:'18:00',name:'抵达北京 PEK',desc:'旅程结束'}
   ]}
 ];
+
+
 
 const timeline = document.getElementById('timelineContainer');
 days.forEach((day,i)=>{
@@ -544,18 +554,28 @@ setTimeout(()=>{var h=document.querySelector('.timeline-day-header');if(h)h.clic
 // --- RESTAURANTS ---
 var restaurants=[
   {area:'Ubud',name:'Tommy Cafe',type:'咖啡厅',desc:'藏在稻田里的咖啡馆，环境非常惬意。',tags:['稻田','咖啡','早餐'],price:'30-50'},
+  {area:'Ubud',name:'Bebek Bengil',type:'印尼菜-脏鸭饭',desc:'乌布最好吃的脏鸭饭。稻田旁水上小竹屋，环境满分。',tags:['脏鸭饭','水上竹屋','约会'],price:'80'},
+  {area:'Ubud',name:'Warung Pondok Madu',type:'印尼菜-猪排',desc:'愿开 40 分钟摩托去的神级店！全巴厘岛最好吃印尼食物。',tags:['猪排','必打卡','午餐'],price:'80'},
   {area:'Ubud',name:'Sun Sun Warung',type:'印尼菜',desc:'巴厘岛最正宗的印尼菜，本地人也爱来。',tags:['印尼菜','地道','性价比'],price:'20-40'},
-  {area:'Ubud',name:'Melting Wok Warung',type:'融合菜',desc:'法式与印尼风味融合，咖喱面是招牌。',tags:['融合菜','咖喱','招牌面'],price:'40-60'},
-  {area:'Ubud',name:'Yellow Flower Cafe',type:'咖啡厅',desc:'俯瞰稻田的露天咖啡馆，日出早餐绝佳。',tags:['稻田','露天','早餐'],price:'30-50'},
   {area:'Ubud',name:"Naughty Nuri's",type:'烧烤',desc:'巴厘岛最有名的猪肋排，排队也要吃。',tags:['猪肋排','烧烤','招牌'],price:'50-80'},
   {area:'Uluwatu',name:'Delpi Cafe',type:'悬崖咖啡厅',desc:'悬崖沙滩边的咖啡馆，日落时分绝美。',tags:['悬崖','日落','沙滩'],price:'40-60'},
   {area:'Uluwatu',name:'White Rock Beach Club',type:'Beach Club',desc:'乌鲁瓦图最热门的海滩俱乐部，无边泳池+日落。',tags:['无边泳池','日落','DJ'],price:'100-200'},
   {area:'Uluwatu',name:'Palmilla',type:'Beach Club',desc:'小众悬崖海滩俱乐部，安静浪漫。',tags:['悬崖','安静','浪漫'],price:'80-150'},
-  {area:'Canggu',name:'Baked',type:'咖啡厅',desc:'仓古最洋气的咖啡厅，早上喝杯咖啡聊天极舒服。',tags:['咖啡','烘焙','社交'],price:'30-50'},
-  {area:'Canggu',name:'La Brisa',type:'Beach Club',desc:'仓古海边夕阳圣地，沙滩小店提供懒人沙发躺椅。',tags:['夕阳','沙滩','浪漫晚餐'],price:'60-120'},
-  {area:'Canggu',name:'SOL Rooftop',type:'Beach Club / 咖啡厅',desc:'新晋心头好！Pererenan 海边 3 层，泳池、躺椅、网床。',tags:['躺平','泳池','三层','网床'],price:'60-120'},
-  {area:'Jimbaran',name:'Kepiting Sukro',type:'海鲜 / 中餐风味',desc:'符合中国口味的海鲜店，炒螃蟹和皮皮虾很不错。',tags:['海鲜','中餐','螃蟹'],price:'60-100'},
+  {area:'Canggu',name:'Warung Sika',type:'本地印尼菜',desc:'非常干净，自助餐式二三十种蔬菜+肉，平价美味。',tags:['自助','平价','午餐'],price:'30'},
+  {area:'Canggu',name:'TYM Seafood',type:'本地海鲜烧烤',desc:'从金巴兰拉来新鲜海鲜，鱿鱼/红宝石鱼/黑虎虾。',tags:['海鲜','烧烤','晚餐'],price:'70'},
+  {area:'Canggu',name:'Openhouse',type:'健康餐',desc:'新晋白人饭之王！自选蛋白质+碳水+蔬菜，健身党最爱。',tags:['健康','自选','Brunch'],price:'60'},
+  {area:'Canggu',name:'Han Sang BBQ',type:'韩国烤肉火锅自助',desc:'烤肉+火锅同时提供，高级套餐无限加，牛肉很嫩。',tags:['烤肉','火锅','自助'],price:'80'},
+  {area:'Canggu',name:'Yumei Noodles',type:'中餐-四川牛肉面',desc:'Canggu 中餐之魂！香料四川进口，辣味正宗。',tags:['中餐','牛肉面','解馋'],price:'60'},
+  {area:'Canggu',name:'HoiAn by MeVui',type:'越南粉',desc:'最爱越南粉店，清淡养胃，可坐稻田旁看日落。',tags:['越南粉','清淡','日落'],price:'55'},
+  {area:'Canggu',name:'Paed Thai',type:'泰餐',desc:'超级好吃！特别正宗，朋友来了 6 天吃了 3 顿。',tags:['泰餐','正宗','聚餐'],price:'100'},
+  {area:'Canggu',name:'Yeshi',type:'中餐-炒菜',desc:'仓古最好吃中餐炒菜！双椒鸡丁/回锅肉/口水鸡。',tags:['中餐','炒菜','晚餐'],price:'110'},
+  {area:'Seminyak',name:'Rayjin Teppanyaki',type:'日料-铁板烧',desc:'非常适合约会的餐厅！黑胶牛肉饭超级好吃。',tags:['日料','铁板烧','约会'],price:'150'},
+  {area:'Kuta',name:"Fat Tony's",type:'汉堡',desc:'全巴厘岛最好吃的汉堡！物美价廉量大。',tags:['汉堡','冲浪后','经济'],price:'40'},
+  {area:'Kuta',name:'Warung Indonesia',type:'本地印尼菜',desc:'Kuta 最常去的食堂，印尼自助点菜，卫生便宜好吃。',tags:['自助','平价','食堂'],price:'30'},
+  {area:'Jimbaran',name:'Kepiting Sukro',type:'海鲜-中餐风味',desc:'符合中国口味的海鲜店，炒螃蟹和皮皮虾很不错。',tags:['海鲜','中餐','螃蟹'],price:'60-100'},
 ];
+
+
 
 var rGrid=document.getElementById('restaurantGrid');
 restaurants.forEach(r=>{
@@ -588,22 +608,28 @@ var budgetData=[
   {name:'国际往返机票（已定）',type:'交通',amount:14000},
   {name:'餐饮',type:'餐饮',amount:2000},
   {name:'打车',type:'交通',amount:200},
+  {name:'接送机',type:'交通',amount:150},
+  {name:'购物',type:'购物',amount:1500},
   {name:'门票',type:'门票+活动',amount:200},
-  {name:'洲际酒店',type:'酒店',amount:2500},
-  {name:'萨努尔酒店',type:'酒店',amount:2500},
-  {name:'Komodo 酒店',type:'酒店',amount:3000},
-  {name:'乌布日包车',type:'交通',amount:100},
-  {name:'乌鲁瓦图包车',type:'交通',amount:100},
-  {name:'乌布活动',type:'门票+活动',amount:1000},
-  {name:'Spa',type:'门票+活动',amount:500},
-  {name:'乌鲁瓦图活动',type:'门票+活动',amount:1000},
-  {name:'Beach Club 门票',type:'门票+活动',amount:1000},
+  {name:'洲际酒店（2晚）',type:'酒店住宿',amount:2500},
+  {name:'乌布酒店（1晚）',type:'酒店住宿',amount:1200},
+  {name:'水明漾酒店（1晚）',type:'酒店住宿',amount:1200},
+  {name:'Komodo 酒店（2晚）',type:'酒店住宿',amount:3000},
   {name:'佩妮达快艇往返',type:'交通',amount:200},
   {name:'佩妮达包车',type:'交通',amount:400},
+  {name:'乌布日包车',type:'交通',amount:100},
+  {name:'乌布活动',type:'门票+活动',amount:500},
+  {name:'Spa',type:'门票+活动',amount:500},
+  {name:'乌鲁瓦图包车',type:'交通',amount:100},
+  {name:'乌鲁瓦图活动',type:'门票+活动',amount:1000},
+  {name:'Beach Club 门票',type:'门票+活动',amount:800},
   {name:'科莫多船票',type:'门票+活动',amount:300}
 ];
 var total=budgetData.reduce((s,i)=>s+i.amount,0);
-document.getElementById('budgetTotal').textContent='29,000--30,000';
+var cats={},catColors={'交通':'#E8734A','餐饮':'#0D9488','酒店住宿':'#166534','门票+活动':'#D4A574','购物':'#A78BFA'};
+
+var total=budgetData.reduce((s,i)=>s+i.amount,0);
+document.getElementById('budgetTotal').textContent='29,850';
 
 var cats={},catColors={'交通':'#E8734A','餐饮':'#0D9488','酒店':'#166534','门票+活动':'#D4A574'};
 budgetData.forEach(i=>{if(!cats[i.type])cats[i.type]=0;cats[i.type]+=i.amount;});
@@ -620,24 +646,23 @@ var checklistData=[
   {text:'护照有效期检查（>= 6 个月）',tag:'critical',tagLabel:'关键'},
   {text:'电子落地签（e-VOA）',tag:'critical',tagLabel:'关键'},
   {text:'返程机票 + 酒店订单打印',tag:'critical',tagLabel:'关键'},
-  {text:'境外旅行保险购买',tag:'critical',tagLabel:'关键'},
-  {text:'巴厘岛本岛 4 天酒店预订',tag:'critical',tagLabel:'关键'},
-  {text:'Ayana Komodo 2 晚确认',tag:'critical',tagLabel:'关键'},
-  {text:'回程三段是否联程、行李直挂确认',tag:'critical',tagLabel:'关键'},
+  {text:'确认回程三段是否联程、行李直挂',tag:'critical',tagLabel:'关键'},
   {text:'Ayana Komodo 一日游邮件确认',tag:'important',tagLabel:'重要'},
   {text:'WhatsApp 注册 + 测试可用',tag:'important',tagLabel:'重要'},
-  {text:'下载 Grab / Gojek / Google Maps',tag:'important',tagLabel:'重要'},
-  {text:'Beach Club 日落位预定',tag:'important',tagLabel:'重要'},
-  {text:'ATV + 滑翔伞等活动门票确认',tag:'important',tagLabel:'重要'},
-  {text:'佩妮达 Klook 船票',tag:'important',tagLabel:'重要'},
+  {text:'下载 Grab / Gojek / Google Maps / Klook',tag:'important',tagLabel:'重要'},
+  {text:'Beach Club 日落位预定（提前一周）',tag:'important',tagLabel:'重要'},
+  {text:'乌布 / 乌鲁瓦图包车预定（提前一周）',tag:'important',tagLabel:'重要'},
+  {text:'ATV + 滑翔伞 + 漂流等活动门票确认',tag:'important',tagLabel:'重要'},
+  {text:'佩妮达 Klook 船票（出发前 1-2 天）',tag:'important',tagLabel:'重要'},
   {text:'佩妮达包车司机 WhatsApp 确认',tag:'important',tagLabel:'重要'},
-  {text:'乌布花瓣浴预约',tag:'important',tagLabel:'重要'},
+  {text:'乌布花瓣浴预约（提前 1-2 周）',tag:'important',tagLabel:'重要'},
+  {text:'科莫多小飞机行李额购买（限重 7kg）',tag:'important',tagLabel:'重要'},
   {text:'克差火舞门票',tag:'reminder',tagLabel:'提醒'},
   {text:'常备药（肠胃药 + 晕船药 + 感冒药）',tag:'reminder',tagLabel:'提醒'},
   {text:'运动鞋（精灵坠崖 + 帕达尔登山）',tag:'reminder',tagLabel:'提醒'},
-  {text:'行李：每人 1 登机箱 + 1 背包',tag:'important',tagLabel:'重要'},
-  {text:'现金（DPS 机场 ATM 取）',tag:'reminder',tagLabel:'提醒'}
+  {text:'现金（DPS 机场 / 酒店附近 ATM 取）',tag:'reminder',tagLabel:'提醒'}
 ];
+
 var clGrid=document.getElementById('checklistGrid');
 checklistData.forEach(item=>{
   var el=document.createElement('div');el.className='checklist-item';
